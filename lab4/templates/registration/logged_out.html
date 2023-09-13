@@ -1,0 +1,14 @@
+{% extends 'polls/base.html' %}
+
+{%  block title%}
+Logout Success
+{% endblock %}
+
+
+{% block content %}
+<p>Logged out!</p>
+
+
+<a href="{% url 'login'%}">Click here to login</a>
+
+{% endblock %}

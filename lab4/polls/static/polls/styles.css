@@ -1,0 +1,25 @@
+/*.banner{
+    width: 1400px;
+    height: 450px;
+    margin: 0 auto;
+    text-align: center;
+}*/
+
+.banner img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.footer img{
+    width: 20%;
+    height: 10%;
+    margin: 80px;
+}
+
+.center-align
+{
+    margin: 40px auto 40px;
+    display: block;
+}
+

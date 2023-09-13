@@ -1,0 +1,23 @@
+{% extends 'polls/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <main>
+
+        {% for i in faqs %}
+        <details>
+            <summary><strong style="font-size: larger">{{ i.question }}</strong></summary>
+            <p style="margin-left: 20px">{{ i.answer }}
+                <small><!--сделать через спан-->
+                    <i>(<time datetime="{{ i.date }}">{{ i.date }}</time>)</i>
+                </small>
+            </p>
+
+        </details>
+        {% endfor %}
+
+    </main>
+{% endblock %}

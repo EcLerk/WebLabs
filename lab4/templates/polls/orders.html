@@ -1,0 +1,44 @@
+{% extends 'polls/base.html' %}
+{% block title %}
+    Просмотр заказов
+{% endblock %}
+
+{% block content %}
+<div class="row">
+
+    <div class="col-sm-12">
+
+    <h4>Список заказов:</h4>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Номер заказа</th>
+                <th>услуги</th>
+                <th>клиент</th>
+                <th>номер телефона</th>
+                <th>дата</th>
+            </tr>
+        </thead>
+    <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+
+                <td >
+                    {% for service in order.services.all %}
+                        <ul>{{ service }}</ul>
+                    {% endfor %}
+                </td>
+
+
+                <td>{{ order.name }}</td>
+                <td>{{ order.phone_number }}</td>
+                <td>{{ order.orderDate }}</td>
+            </tr>
+
+        {% endfor %}
+    </tbody>
+    </table>
+    </div>
+</div>
+{% endblock %}

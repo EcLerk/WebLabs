@@ -1,0 +1,24 @@
+
+{% extends 'polls/base.html' %}
+{% load static %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="banner">
+        <a href={% url 'services' %}>
+            <img src="https://cdn.freelance.ru/download/903856/2-%E1%E0%ED%ED%E5%F0+%97+%EA%EE%EF%E8%FF.png" alt="picture doesn't found">
+        </a>
+    </div>
+
+    <footer class="footer">
+        <nav>
+            <a href="https://belaz.by/"><img src="{% static 'media/belaz-logo.png' %}"></a>
+            <a href="https://maz.by/"><img src="{% static 'media/maz.png' %}"></a>
+            <a href="https://www.belarus-tractor.com/"><img src="{% static 'media/belarus-traktor.png' %}"></a>
+
+        </nav>
+    </footer>
+{% endblock %}
