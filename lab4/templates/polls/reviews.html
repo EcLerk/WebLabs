@@ -1,0 +1,21 @@
+{%extends 'polls/base.html'%}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+    {% block content %}
+
+        <a href="{% url 'review_form' %}">Оставить отзыв</a>
+        {% for i in reviews %}
+            <div class="rounded-border">
+                <section>
+                    <h4>{{i.user}}</h4>
+                    <p><strong>Оценка: </strong>{{i.rating}}</p>
+                    <p><strong>Отзыв: </strong>{{i.description}}</p>
+                    <p><strong>Дата: </strong>{{i.date}}</p>
+                </section>
+            </div>
+        {% endfor %}
+
+    {% endblock %}

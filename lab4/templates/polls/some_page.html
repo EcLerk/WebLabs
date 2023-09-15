@@ -1,0 +1,54 @@
+{% extends 'polls/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <h4>Аббревиатура:</h4>
+    <h3><abbr title="National Basketball Association">NBA</abbr></h3><br><br>
+    <h4>Выпадающий список:</h4>
+    <select>
+        <option value="apple">Яблоко</option>
+        <option value="grapes">Виноград</option>
+        <option value="orange">Апельсин</option>
+
+    </select>
+    <h4>Листинг кода:</h4>
+    <code>
+        class Coupons(models.Model):<br>
+        title = models.CharField('Заголовок', max_length=100)<br>
+        description = models.TextField()<br>
+        promocode = models.CharField('Промокод', max_length=10)<br>
+        <br>
+        is_active = models.BooleanField('Активен', default=True<br>
+    </code>
+
+    <br>
+    <h4>Цитата:</h4>
+    <blockquote>
+        Жизнь — как вождение велосипеда. Чтобы сохранить равновесие, ты должен двигаться.
+    </blockquote>
+    <br>
+    <h4>Стих:</h4>
+    <pre>
+        О счастье мы всегда лишь вспоминаем.
+        А счастье всюду. Может быть, оно —
+        Вот этот сад осенний за сараем
+        И чистый воздух, льющийся в окно.
+
+        В бездонном небе легким белым краем
+        Встает, сияет облако. Давно
+        Слежу за ним… Мы мало видим, знаем,
+        А счастье только знающим дано.
+
+        Окно открыто. Пискнула и села
+        На подоконник птичка. И от книг
+        Усталый взгляд я отвожу на миг.
+
+        День вечереет, небо опустело.
+        Гул молотилки слышен на гумне…
+        Я вижу, слышу, счастлив. Все во мне.
+        <cite>Иван Бунин</cite>
+    </pre>
+{% endblock %}

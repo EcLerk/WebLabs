@@ -1,0 +1,33 @@
+{%extends 'polls/base.html'%}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <h3>Активные купоны:</h3>
+    {% for i in coupons %}
+        {% if i.is_active %}
+            <div class="rounded-border">
+                <section>
+                    <h4>{{i.title}}</h4>
+                    <p>{{i.description}}</p>
+                    <p><strong>Промокод: </strong>{{i.promocode}}</p>
+                </section>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    <h3>Архив купонов:</h3>
+    {% for i in coupons %}
+        {% if not i.is_active %}
+            <div class="rounded-border">
+                <section>
+                    <h4>{{i.title}}</h4>
+                    <p>{{i.description}}</p>
+                    <p><strong>Промокод: </strong>{{i.promocode}}</p>
+                </section>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

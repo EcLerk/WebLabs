@@ -23,3 +23,26 @@
     display: block;
 }
 
+.rounded-border
+{
+    padding-left: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 20px;
+    background-color: lightpink;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.rounded-border img
+{
+    float: left;
+    margin-right: 10px;
+}
+
+.rounded-border section
+{
+    margin-left: 30px;
+}
+

@@ -1,17 +1,19 @@
 import requests
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
-from .models import Driver, Service, Order, Vehicle, FAQ
+from .models import Employees, Service, Order, Vehicle, FAQ, News, Review, Coupons
 from .forms import *
 
 def index(request):
     services = Service.objects.all()
-    drivers = Driver.objects.all()
+    drivers = Employees.objects.all()
     vehicles = Vehicle.objects.all()
+    article = News.objects.all().last()
     return render(request, 'polls/index.html', {'title': 'Главная страница', 'drivers': drivers,
-                                                'services': services, 'vehicles': vehicles})
+                                                'services': services, 'vehicles': vehicles, 'article': article})
 
 
 def login(request):
@@ -67,7 +69,7 @@ def show_dog(request):
 
 def services(request):
     services = Service.objects.all()
-    drivers = Driver.objects.all()
+    drivers = Employees.objects.all()
     vehicles = Vehicle.objects.all()
     return render(request, 'polls/services.html', {'title': 'Услуги', 'drivers': drivers,
                                                 'services': services, 'vehicles': vehicles})
@@ -80,3 +82,52 @@ def faq(request):
     faqs = FAQ.objects.all()
     return render(request, 'polls/faq.html', {'title': 'FAQ',
                                               'faqs': faqs})
+
+def contacts(request):
+    employees = Employees.objects.all()
+    return render(request, 'polls/contacts.html', {'title': 'Контакты',
+                                              'employees': employees})
+
+def news(request):
+    news = News.objects.all()
+    return render(request, 'polls/news.html', {'title':'Новости',
+                                               'news': news})
+
+def show_post(request, post_id):
+    article = News.objects.get(id=post_id)
+    return render(request, 'polls/article.html', {'title':f'Статья {post_id}',
+                                               'article': article})
+
+def create_review(request):
+    user = request.user
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            rating = form.cleaned_data['rating']
+            description = form.cleaned_data['description']
+
+            review = Review(rating=rating, description=description)
+            review.user = user
+            review.save()
+
+            return redirect('success_review_page')
+    else:
+        form = ReviewForm()
+
+    return render(request, 'polls/review_form.html', {'form':form})
+
+def reviews(request):
+    reviews = Review.objects.all()
+    return render(request, 'polls/reviews.html', {'title': 'Отзывы','reviews':reviews})
+
+def privacy_policy(request):
+    return render(request, 'polls/privacy_policy.html', {'title': 'Политика конфиденциальности',
+                                                         'reviews': reviews})
+
+def coupons(request):
+    coupons = Coupons.objects.all()
+    return render(request, 'polls/coupons.html', {'title': 'Купоны',
+                                                  'coupons': coupons})
+
+def some_page(request):
+    return render(request, 'polls/some_page.html', {'title': 'some_page'})

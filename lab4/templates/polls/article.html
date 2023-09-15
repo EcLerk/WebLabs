@@ -1,0 +1,17 @@
+{%extends 'polls/base.html'%}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <main>
+        <h3>{{article.title}}</h3>
+        <section>
+            <img src="{{article.photo.url}}" alt="not found">
+            <article>
+                {{article.article}}
+            </article>
+        </section>
+
+    </main>
+{%endblock%}}

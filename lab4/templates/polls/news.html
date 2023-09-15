@@ -1,0 +1,21 @@
+{% extends 'polls/base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <main>
+        {% for i in news %}
+        <div class="rounded-border">
+            <img src="{{ i.photo.url }}" alt="not founded">
+            <section>
+                <h4>{{i.title}}</h4>
+                <p>{{i.description}}</p>
+                <p><a href="{{ i.get_absolute_url }}">Читать дальше...</a></p>
+            </section>
+        </div>
+        {% endfor %}
+    </main>
+{% endblock %}

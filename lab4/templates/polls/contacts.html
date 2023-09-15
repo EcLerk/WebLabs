@@ -1,0 +1,23 @@
+{% extends 'polls/base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <main>
+        {% for i in employees %}
+        <div class="rounded-border">
+            <img src="{{ i.photo.url }}" alt="not found">
+            <section>
+                <h4>{{i.name}} {{i.surname}}</h4>
+                <p><strong>Должность: </strong>{{i.position}}</p>
+                <p><strong>Номер телефона: </strong>{{i.phone_number}}</p>
+                <p><strong>Эл. почта: </strong>{{i.email}}</p>
+            </section>
+        </div>
+        {% endfor %}
+
+    </main>
+{% endblock %}
