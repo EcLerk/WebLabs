@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% block title %}
+    Certificate
+{% endblock %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate</title>
+    <link rel="stylesheet" href="{% static 'polls/styles.css' %}">
+    <link rel="icon" href="{% static 'photos/pictures/company_logo.png' %}" type="image/x-icon">
+</head>
+<body>
+
+<div id="certificate">
+    <h6>СЕРТИФИКАТ О ЧЛЕНСТВЕ РГП (РЕЕСТР ГРУЗОПЕРЕВОЗЧИКОВ) АСОЦИАЦИИ ГРУЗОЛОГИСТИКА</h6>
+
+    <div id="certificate-content">
+        <div class="border-block">
+            <h4 title="blue-text">ЕДИНЫЙ РЕЕСТР ГРУЗОПЕРЕВОЗЧИКОВ</h4>
+            <h3 title="text-red">СВИДЕТЕЛЬСТВО</h3>
+            <h5 title="blue-text">о внесении сведений</h5><br>
+        </div>
+
+        <p class="date">
+            <span>г. Минск</span>
+            <span>25.10.2023</span>
+        </p><br>
+
+        <h4>Общество с ограниченной ответственностью "ГрузоЛогистика"</h4>
+        <p class="paragraph">ИНН (657489)</p>
+        <h4 class="underlined-text">Реестровый номер: 5789</h4>
+        <div class="spacer"></div>
+
+        <h6 class="date">Шарламова И.К.</h6>
+        <h6 class="date">Директор ассоциации "ГрузоЛогистика"</h6><hr>
+
+        <p id="right">
+            <span>Ассоциация "Объединение логистических центров "ГрузоЛогистика"</span><br>
+            <span>222000 г.Минск, ул. Гикало, 9</span><br>
+            <span>тел. +375(33)000-00-00</span><br>
+            <span>email: example@example.com</span>
+        </p>
+    </div>
+</div>
+</body>
+</html>

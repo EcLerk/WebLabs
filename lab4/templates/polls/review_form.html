@@ -5,10 +5,12 @@
 {% endblock %}
 
 {% block content %}
-    <form method="post">
+    <main>
+        <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Отправить отзыв</button>
         <a href="{% url 'home' %}">Отменить</a>
     </form>
+    </main>
 {% endblock %}

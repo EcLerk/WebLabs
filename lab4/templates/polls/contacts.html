@@ -6,11 +6,11 @@
 {% endblock %}
 
 {% block content %}
-    <main>
+    <main class="employee-main">
         {% for i in employees %}
-        <div class="rounded-border">
-            <img src="{{ i.photo.url }}" alt="not found">
-            <section>
+        <div class="rounded-border employee-container">
+            <img src="{{ i.photo.url }}" alt="not found" class="employee-photo">
+            <section class="employee-info">
                 <h4>{{i.name}} {{i.surname}}</h4>
                 <p><strong>Должность: </strong>{{i.position}}</p>
                 <p><strong>Номер телефона: </strong>{{i.phone_number}}</p>

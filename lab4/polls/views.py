@@ -131,3 +131,30 @@ def coupons(request):
 
 def some_page(request):
     return render(request, 'polls/some_page.html', {'title': 'some_page'})
+
+def certificate(request):
+    return render(request, 'polls/certificate.html', {'title': 'cerificate'})
+
+def text_change(request):
+    return render(request, 'polls/js/text_change.html', {'title': 'text'})
+
+def age_calculator(request):
+    return render(request, 'polls/js/age_calculator.html', {'title': 'age'})
+
+def scroll(request):
+    return render(request, 'polls/js/scroll.html', {'title': 'scroll'})
+
+def interactive_table(request):
+    return render(request, 'polls/js/interactive_table.html', {'title': 'text'})
+
+def autoplay(request):
+    return render(request, 'polls/js/autoplay.html', {'title': 'autoplay'})
+
+def associative_array(request):
+    return render(request, 'polls/js/associative_array.html', {'title': 'associative_array'})
+
+def paralax(request):
+    return render(request, 'polls/js/paralax.html', {'title': 'paralax'})
+
+def calculator(request):
+    return render(request, 'polls/js/calculator.html', {'title': 'calculator'})

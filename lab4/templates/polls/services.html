@@ -4,20 +4,21 @@
 {% endblock %}
 
 {% block content %}
-
-    <h4>Список услуг:</h4>
+<main>
+    <h1 id="services-header">THIS is my Services</h1>
     {% for i in services %}
-        <div class="alert alert-warning mt-2">
+        <div id="grid" class="alert alert-warning mt-2">
             <h5>{{ i.title}}</h5>
             <p>{{ i.description }}</p>
         </div>
     {% endfor %}
 
-    <h4>Автомобили:</h4>
+    <!--<h4>Автомобили:</h4>
     {% for i in vehicles %}
         <div class="alert alert-warning mt-2">
             <h5>{{ i.brand}} {{ i.model}}, {{ i.year }}</h5>
         </div>
-    {% endfor %}
+    {% endfor %}-->
+</main>
 
 {% endblock %}

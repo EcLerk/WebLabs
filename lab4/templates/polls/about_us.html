@@ -7,7 +7,7 @@
 
 {% block content %}
     <main>
-        <article>
+        <article id="about">
             <strong>"ГрузоЛогистика"</strong> - это ведущая компания в области грузоперевозок,
             предоставляющая высококачественные и надежные услуги в сфере транспортировки грузов.
             Наша компания специализируется на организации грузоперевозок как национального, так и международного масштаба.
@@ -23,10 +23,10 @@
                    allowfullscreen></iframe>
 
         <div>
-            <img class="center-align" src="{% static 'media/company_logo.png'%}" alt="img not found:(" ali>
+            <img class="center-align logoTransform" src="{% static 'media/company_logo.png'%}" alt="img not found:(">
         </div>
 
-       <section>
+       <section class="history">
        <br><h3>Наша история</h3>
 
            <strong>2000 год: Основание компании</strong>
@@ -60,4 +60,5 @@
        </section>
     </main>
 
+<footer><p><a href="{% url 'certificate' %}" target="_blank">Certificate of quality of services</a></p></footer>
 {% endblock %}

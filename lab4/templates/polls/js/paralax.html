@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Age calculator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+    <!-- inspiration from https://dribbble.com/shots/3618992-The-View-From-Below -->
+</head>
+<!-- Photo by Nichlas Andersen on Unsplash -->
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: pink;
+  font-family: "Work Sans", sans-serif;
+  text-align: center;
+}
+
+article {
+  width: 90%;
+  max-width: 645px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 3fr 0.5fr 3fr 0.5fr;
+  grid-gap: 0;
+  background: #ffffff;
+  margin: 10vh auto;
+  box-shadow: 0px 70px 100px -45px $dark_shadow;
+  transform-style: preserve-3d;
+  transition: all 0.05s linear;
+  perspective: 1000px;
+
+  @media screen and (min-width: 690px) {
+    grid-template-rows: 0.5fr 3fr 0.5fr 0.5fr;
+  }
+}
+
+.article__image {
+  grid-column-start: 1;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  overflow: hidden;
+  background: transparent
+    url("https://images.unsplash.com/photo-1490122417551-6ee9691429d0") center
+    0px no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+
+  @media screen and (max-width: 385px) {
+    background-size: cover;
+  }
+
+  @media screen and (min-width: 690px) {
+    grid-column-end: 5;
+    grid-row-end: 5;
+    background-size: auto 100%;
+  }
+}
+
+.article__month,
+.article__day,
+.article__pager {
+  font-size: 10px;
+  color: #c6c6c6;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.article__month {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 2;
+
+  display: inline-block;
+  text-align: left;
+  padding-left: 40px;
+  line-height: 40px;
+
+  @media screen and (min-width: 690px) {
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+}
+
+.article__day {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 2;
+  grid-row-end: 2;
+
+  display: inline-block;
+  text-align: right;
+  padding-right: 40px;
+  line-height: 40px;
+
+  @media screen and (min-width: 690px) {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+}
+
+.article__month,
+.article__day {
+  transform: translateZ(25px);
+}
+
+.article__text {
+  grid-column-start: 1;
+  grid-column-end: 9;
+  grid-row-start: 3;
+  grid-row-end: 4;
+
+  margin-bottom: 0;
+
+  transform: translateZ(50px);
+
+  @media screen and (min-width: 690px) {
+    grid-column-start: 5;
+    grid-row-start: 2;
+    padding-top: 10%;
+  }
+}
+
+.article__title {
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.article__type {
+  display: inline-block;
+  width: 100%;
+  clear: both;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.article__button {
+  display: inline-block;
+  clear: both;
+  margin: 20px auto 0;
+  padding: 15px 30px; //temp
+  background: #e7b8b8;
+  font-size: 10px;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 5px;
+}
+
+.article__pager {
+  line-height: 77px;
+  margin-bottom: 0;
+  transform: translateZ(25px);
+}
+
+.article__pager--next {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 4;
+  grid-row-end: 4;
+
+  text-align: right;
+  padding-right: 40px;
+
+  @media screen and (min-width: 690px) {
+    grid-column-start: 7;
+  }
+}
+
+.article__pager--prev {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 4;
+
+  text-align: left;
+  padding-left: 40px;
+
+  @media screen and (min-width: 690px) {
+    grid-column-start: 5;
+    grid-column-end: 7;
+  }
+}
+</style>
+<article class="article">
+  <!-- ha -->
+
+  <div class="article__image">
+
+  </div>
+
+  <span class="article__month">04</span>
+  <span class="article__day">17</span>
+
+  <div class="article__text">
+    <h1 class="article__title">
+      <!-- forget grandchildren for now -->
+      The View<br> From Below
+    </h1>
+
+    <span class="article__type">Article</span>
+
+    <a href="#" class="article__button">Read</a>
+
+  </div>
+
+  <a href="#" class="article__pager article__pager--prev">Prev</a>
+
+  <a href="#" class="article__pager article__pager--next">Next</a>
+
+</article>
+
+<!--<a class="credit" style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family: Helvetica, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px;" href="https://unsplash.com/@itsnwa?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Nichlas Andersen"><span style="display:inline-block;padding:2px 3px;"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white;" viewBox="0 0 32 32">-->
+<!--      <title></title>-->
+<!--      <path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path>-->
+<!--    </svg></span><span style="display:inline-block;padding:2px 3px;">Nichlas Andersen</span></a>-->
+
+<!--<a class="credit credit&#45;&#45;design" style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family: Helvetica, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px;" href="https://dribbble.com/shots/3618992-The-View-From-Below" target="_blank" rel="noopener noreferrer"><span style="display:inline-block;padding:2px 3px;"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white;" viewBox="0 0 20 20">-->
+<!--      <title></title>-->
+<!--      <path d="M7.621,10.267c-0.367,0.404-0.457,0.694-0.938,1.454c0.311,0.217,0.908,0.718,1.322,1.581   c0.827-0.475,1.213-0.547,1.651-0.916c2.862-2.41,9.87-11.049,9.629-11.299C19.032,0.822,10.141,7.503,7.621,10.267z M5.857,12.392   c-1.243-0.22-2.47,0.566-3.289,2.53c-0.82,1.964-2.284,2.75-2.568,2.702c1.528,0.553,6.188,1.967,7.346-3.416   C6.854,12.917,5.857,12.392,5.857,12.392z" fill="#FFFFFF" />-->
+<!--    </svg></span><span style="display:inline-block;padding:2px 3px;">Vedad Siljak</span></a>-->
+
+<script src="{% static 'polls/js/scripts.js' %}"></script>
+</html>

@@ -5,17 +5,19 @@
 {% endblock %}
 
     {% block content %}
+    <main>
 
         <a href="{% url 'review_form' %}">Оставить отзыв</a>
         {% for i in reviews %}
-            <div class="rounded-border">
+            <div class="review-container rounded-border">
                 <section>
-                    <h4>{{i.user}}</h4>
+                    <h4 class="review-heading">{{i.user}}</h4>
                     <p><strong>Оценка: </strong>{{i.rating}}</p>
                     <p><strong>Отзыв: </strong>{{i.description}}</p>
                     <p><strong>Дата: </strong>{{i.date}}</p>
                 </section>
             </div>
         {% endfor %}
+    </main>
 
     {% endblock %}

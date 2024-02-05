@@ -5,8 +5,34 @@
 {% endblock %}
 
 {% block content %}
-    <h4>Аббревиатура:</h4>
+   <main> <h4>Аббревиатура:</h4>
     <h3><abbr title="National Basketball Association">NBA</abbr></h3><br><br>
+    <button>Click me!</button>
+    <h3>Input:</h3>
+    <label for="numberInput">Enter a number between 1 and 10:</label>
+    <input type="number" id="numberInput" name="numberInput" class="out-of-range" min="1" max="10">
+    <h3>Form:</h3>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" rows="4"></textarea> <!-- Пример заблокированного элемента -->
+
+        <input type="submit" value="Submit" disabled>
+
+
+        <input type="checkbox" id="checkbox" name="checkbox"> <!-- Пример чекбокса -->
+        <label for="checkbox">Checkbox</label>
+
+        <input type="radio" id="radio" name="radio"> <!-- Пример радиокнопки -->
+        <label for="radio">Radio</label>
+    </form>
+
+
     <h4>Выпадающий список:</h4>
     <select>
         <option value="apple">Яблоко</option>
@@ -29,9 +55,16 @@
     <blockquote>
         Жизнь — как вождение велосипеда. Чтобы сохранить равновесие, ты должен двигаться.
     </blockquote>
+<q lang="ru">
+    Цитата на русском
+</q>
+<br>
+<q lang="en">
+    The english quote
+</q>
     <br>
     <h4>Стих:</h4>
-    <pre>
+    <pre id="poem">
         О счастье мы всегда лишь вспоминаем.
         А счастье всюду. Может быть, оно —
         Вот этот сад осенний за сараем
@@ -50,5 +83,5 @@
         Гул молотилки слышен на гумне…
         Я вижу, слышу, счастлив. Все во мне.
         <cite>Иван Бунин</cite>
-    </pre>
+    </pre></main>
 {% endblock %}

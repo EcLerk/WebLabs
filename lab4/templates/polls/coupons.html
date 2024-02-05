@@ -5,7 +5,8 @@
 {% endblock %}
 
 {% block content %}
-    <h3>Активные купоны:</h3>
+   <main>
+        <h3>Активные купоны:</h3>
     {% for i in coupons %}
         {% if i.is_active %}
             <div class="rounded-border">
@@ -30,4 +31,5 @@
             </div>
         {% endif %}
     {% endfor %}
+   </main>
 {% endblock %}

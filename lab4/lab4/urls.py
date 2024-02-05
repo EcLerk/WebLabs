@@ -42,7 +42,16 @@ urlpatterns = [
     path('reviews/', reviews, name='reviews'),
     path('privacy/', privacy_policy, name='privacy'),
     path('coupons/', coupons, name='coupons'),
-    path('some_page/', some_page, name='some_page')
+    path('some_page/', some_page, name='some_page'),
+    path('certificate/', certificate, name = 'certificate'),
+    path('text_change/', text_change, name = 'text_change'),
+    path('age_calculator/', age_calculator, name = 'age_calculator'),
+    path('scroll/', scroll, name = 'scroll'),
+    path('interactive_table/', interactive_table, name = 'interactive_table'),
+    path('autoplay/', autoplay, name='autoplay'),
+    path('associative_array/', associative_array, name='associative_array'),
+    path('paralax/', paralax, name='paralax'),
+    path('calculator/', calculator, name='calculator')
 ]
 
 if settings.DEBUG:

@@ -10,27 +10,29 @@
     <main>
         <div class="rounded-border">
             <img src="{{ article.photo.url }}" alt="not founded">
-            <section>
+            <section class="article-info">
                 <h4>{{article.title}}</h4>
-                <p>{{article.description}}</p>
+                <p class="article-preview">{{article.description}}</p>
                 <p><a href="{{ article.get_absolute_url }}">Читать дальше...</a></p>
             </section>
         </div>
 
         <div class="banner">
         <a href={% url 'coupons' %}>
-            <img src="https://cdn.freelance.ru/download/903856/2-%E1%E0%ED%ED%E5%F0+%97+%EA%EE%EF%E8%FF.png" alt="picture doesn't found">
+            <img src="https://cdn.freelance.ru/download/903856/2-%E1%E0%ED%ED%E5%F0+%97+%EA%EE%EF%E8%FF.png" alt="picture doesn't found" class="banner-image">
         </a>
+    </div>
+
+    <div class="partner-icons">
+    <nav>
+        <a class="partner-block" href="https://belaz.by/"><img src="{% static 'media/belaz-logo.png' %}"></a>
+        <a class="partner-block" href="https://maz.by/"><img src="{% static 'media/maz.png' %}"></a>
+        <a class="partner-block" href="https://www.belarus-tractor.com/"><img src="{% static 'media/belarus-traktor.png' %}"></a>
+
+    </nav>
     </div>
     </main>
 
 
-    <div class="footer">
-        <nav>
-            <a href="https://belaz.by/"><img src="{% static 'media/belaz-logo.png' %}"></a>
-            <a href="https://maz.by/"><img src="{% static 'media/maz.png' %}"></a>
-            <a href="https://www.belarus-tractor.com/"><img src="{% static 'media/belarus-traktor.png' %}"></a>
 
-        </nav>
-    </div>
 {% endblock %}
